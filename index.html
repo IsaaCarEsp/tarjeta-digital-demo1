@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dr. Nombre Apellido | Odontología Especializada</title>
+  
+  <!-- Iconos de FontAwesome para botones de contacto -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Fuente moderna Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #0284c7;       /* Azul médico profesional */
+      --primary-dark: #0369a1;  /* Azul oscuro para hover */
+      --bg: #f8fafc;            /* Fondo gris ultra claro */
+      --card-bg: #ffffff;       /* Tarjeta blanca */
+      --text: #1e293b;          /* Texto oscuro elegante */
+      --text-sub: #64748b;      /* Texto secundario */
+      --whatsapp: #25d366;      /* Verde WhatsApp */
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 15px;
+    }
+
+    /* Estructura del marco móvil */
+    .card-container {
+      width: 100%;
+      max-width: 400px;
+      background: var(--card-bg);
+      border-radius: 24px;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+      overflow: hidden;
+      border: 1px solid #e2e8f0;
+    }
+
+    /* Cabecera / Banner */
+    .header-banner {
+      background: linear-gradient(135deg, #0284c7, #38bdf8);
+      height: 110px;
+      position: relative;
+    }
+
+    /* Foto de Perfil / Logotipo */
+    .profile-area {
+      text-align: center;
+      margin-top: -50px;
+      padding: 0 20px;
+    }
+
+    .profile-img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      border: 4px solid var(--card-bg);
+      object-fit: cover;
+      background: #e2e8f0;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+
+    .profile-info {
+      margin-top: 12px;
+    }
+
+    .profile-info h1 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .profile-info p {
+      font-size: 0.9rem;
+      color: var(--primary);
+      font-weight: 600;
+      margin-top: 2px;
+    }
+
+    .profile-tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      background: #e0f2fe;
+      color: var(--primary-dark);
+      padding: 4px 10px;
+      border-radius: 20px;
+      margin-top: 6px;
+      font-weight: 600;
+    }
+
+    /* Bloque de Acciones Principales */
+    .actions {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      padding: 14px 20px;
+      border-radius: 14px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-whatsapp {
+      background-color: var(--whatsapp);
+      color: #ffffff;
+    }
+
+    .btn-whatsapp:hover {
+      background-color: #1eb857;
+      transform: translateY(-1px);
+    }
+
+    .btn-primary {
+      background-color: var(--primary);
+      color: #ffffff;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--primary-dark);
+      transform: translateY(-1px);
+    }
+
+    .btn-outline {
+      background-color: transparent;
+      color: var(--text);
+      border: 1.5px solid #cbd5e1;
+    }
+
+    .btn-outline:hover {
+      background-color: #f1f5f9;
+    }
+
+    /* Sección de Servicios */
+    .services-section {
+      padding: 0 20px 20px 20px;
+    }
+
+    .section-title {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-sub);
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+    }
+
+    .service-item {
+      background: #f8fafc;
+      border: 1px solid #f1f5f9;
+      padding: 10px;
+      border-radius: 10px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .service-item i {
+      color: var(--primary);
+    }
+
+    /* Pie de tarjeta */
+    .footer {
+      padding: 15px 20px;
+      background: #f8fafc;
+      border-top: 1px solid #f1f5f9;
+      text-align: center;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 10px;
+    }
+
+    .social-links a {
+      color: var(--text-sub);
+      font-size: 1.2rem;
+      transition: color 0.2s;
+    }
+
+    .social-links a:hover {
+      color: var(--primary);
+    }
+
+    .copyright {
+      font-size: 0.7rem;
+      color: #94a3b8;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card-container">
+    <!-- Banner de Cabecera -->
+    <div class="header-banner"></div>
+
+    <!-- Perfil del Odontólogo -->
+    <div class="profile-area">
+      <!-- Puedes cambiar la URL de esta imagen por la foto real o un placeholder -->
+      <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=300&auto=format&fit=crop&q=80" alt="Doctor Odontólogo" class="profile-img">
+      
+      <div class="profile-info">
+        <h1>Dr. Carlos Mendoza</h1>
+        <p>Cirujano Dentista</p>
+        <span class="profile-tag"><i class="fa-solid fa-tooth"></i> Especialista en Estética Dental</span>
+      </div>
+    </div>
+
+    <!-- Botones de Acción Inmediata -->
+    <div class="actions">
+      <!-- Botón de WhatsApp -->
+      <a href="https://wa.me/525500000000?text=Hola%20Dr.%20Carlos,%20me%20gustar%C3%ADa%20agendar%20una%20cita%20de%20valoraci%C3%B3n" target="_blank" class="btn btn-whatsapp">
+        <i class="fa-brands fa-whatsapp fa-lg"></i> Agendar Cita por WhatsApp
+      </a>
+
+      <!-- Guardar Contacto (Descarga vCard) -->
+      <button onclick="downloadVCard()" class="btn btn-primary">
+        <i class="fa-solid fa-user-plus"></i> Guardar Contacto en Teléfono
+      </button>
+
+      <!-- Ubicación en Google Maps -->
+      <a href="https://maps.google.com" target="_blank" class="btn btn-outline">
+        <i class="fa-solid fa-location-dot" style="color: #ef4444;"></i> Ver Ubicación del Consultorio
+      </a>
+    </div>
+
+    <!-- Módulo de Servicios Rápidos -->
+    <div class="services-section">
+      <div class="section-title">Tratamientos Frecuentes</div>
+      <div class="services-grid">
+        <div class="service-item"><i class="fa-solid fa-check"></i> Limpieza Ultrasonido</div>
+        <div class="service-item"><i class="fa-solid fa-check"></i> Blanqueamiento</div>
+        <div class="service-item"><i class="fa-solid fa-check"></i> Ortodoncia / Brackets</div>
+        <div class="service-item"><i class="fa-solid fa-check"></i> Resinas Estéticas</div>
+      </div>
+    </div>
+
+    <!-- Redes Sociales y Créditos -->
+    <div class="footer">
+      <div class="social-links">
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+        <a href="#"><i class="fa-solid fa-envelope"></i></a>
+      </div>
+      <p class="copyright">Consultorio Dental • Chiconcuac / Texcoco</p>
+    </div>
+  </div>
+
+  <!-- Script para descargar archivo de contacto (vCard) automático -->
+  <script>
+    function downloadVCard() {
+      const vcardData = 
+`BEGIN:VCARD
+VERSION:3.0
+FN:Dr. Carlos Mendoza - Dentista
+ORG:Consultorio Dental
+TEL;TYPE=CELL:+525500000000
+TITLE:Cirujano Dentista
+NOTE:Agéndalo fácilmente desde su tarjeta digital
+END:VCARD`;
+
+      const blob = new Blob([vcardData], { type: 'text/vcard' });
+      const url = window.URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'Dr_Carlos_Mendoza_Dentista.vcf';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    }
+  </script>
+</body>
+</html>
